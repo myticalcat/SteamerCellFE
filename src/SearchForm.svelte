@@ -44,10 +44,6 @@ let isOn = {
         Operating System:
         <select bind:value={os}>
             <option value="">Select OS</option>
-            <option value="Windows">Windows</option>
-            <option value="macOS">macOS</option>
-            <option value="Linux">Linux</option>
-            <option value="ChromeOS">ChromeOS</option>
             <option value="Android">Android</option>
             <option value="iOS">iOS</option>
         </select>
@@ -113,6 +109,7 @@ let isOn = {
     margin-right: auto;
     background-color: #f0f0f0;
     text-align: center;
+    padding: 10px;
 }
 
 .flex-container {
