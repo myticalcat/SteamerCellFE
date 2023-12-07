@@ -11,34 +11,28 @@ let storageMin = 128;
 let storageMax = 1024;
 let hasWifi = false;
 let has4g = false;
-
-let isOn = {
-    name: false,
-    brand: false,
-    minRAM: false,
-    maxRAM: false,
-    os: false,
-    priceMin: false,
-    priceMax: false,
-    storageMin: false,
-    storageMax: false,
-    hasWifi: false,
-    has4g: false,
-}
 </script>
 
 <div class="input">
-    <input type="text" bind:value={name} placeholder="Name" />
-    <input type="text" bind:value={brand} placeholder="Brand" />
+    <input type="text" bind:value={name} placeholder="Name" class="block-container" />
+    <input type="text" bind:value={brand} placeholder="Brand" class="block-container"/>
     <label>
-        Min RAM (GB):
-        <input type="range" bind:value={minRAM} min="0" max="64" />
-        {minRAM}
+        <div class="flex-container">
+            <p class="prop-name">Min RAM (GB):</p>
+        </div>
+        <div class="flex-container">
+            <input type="range" bind:value={minRAM} min="0" max="64" />
+            <p>{minRAM}</p>
+        </div>
     </label>
     <label>
-        Max RAM (GB):
-        <input type="range" bind:value={maxRAM} min="0" max="64" />
-        {maxRAM}
+        <div class="flex-container">
+            <p class="prop-name">Max RAM (GB):</p>
+        </div>
+        <div class="flex-container">
+            <input type="range" bind:value={maxRAM} min="0" max="64" />
+            <p>{maxRAM}</p>
+        </div>
     </label>
     <label>
         Operating System:
@@ -51,7 +45,6 @@ let isOn = {
     <label>
         <div class="flex-container">
             <p class="prop-name">Min Price:</p>
-            <input type="checkbox" bind:checked={isOn.priceMin}>
         </div>
         <div class="flex-container">
             <input type="range" bind:value={priceMin} min="0" max="5000" step="1" />
@@ -61,7 +54,6 @@ let isOn = {
     <label>
         <div class="flex-container">
             <p class="prop-name">Max Price:</p>
-            <input type="checkbox" bind:checked={isOn.priceMax}>
         </div>
         <div class="flex-container">
             <input type="range" bind:value={priceMax} min="0" max="5000" step="50" />
@@ -71,7 +63,6 @@ let isOn = {
     <label>
         <div class="flex-container">
             <p class="prop-name">Min Storage (GB):</p>
-            <input type="checkbox" bind:checked={isOn.storageMin}>
         </div>
         <div class="flex-container">
             <input type="range" bind:value={storageMin} min="0" max="2000" />
@@ -81,7 +72,6 @@ let isOn = {
     <label>
         <div class="flex-container">
             <p class="prop-name">Max Storage (GB):</p>
-            <input type="checkbox" bind:checked={isOn.storageMax}>
         </div>
         <div class="flex-container">
             <input type="range" bind:value={storageMax} min="0" max="2000" />
@@ -117,8 +107,16 @@ let isOn = {
     justify-content: center;
 }
 
+.block-container{
+    display: block;
+}
+
 input[type="range"] {
     flex-grow: 1;
+}
+
+input[type="text"]{
+    width: 100%;
 }
 
 p {

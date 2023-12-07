@@ -1,39 +1,60 @@
 <script>
-  import SearchForm from './SearchForm.svelte';
-
-  let search = (searchParams) => {
+import SearchForm from './SearchForm.svelte';
+let kukusanCell = "https://cdn.discordapp.com/attachments/790868959800197151/1182273948537344010/kukusan_cell.gif?ex=6584196a&is=6571a46a&hm=c109f6cba71b78f9aaaf964112505872ba523e7935bde2624c5dd7c8bc2a132d&";
+let search = (searchParams) => {
     console.log('Searching for devices with the following parameters:', searchParams);
-  }
-  console.log(typeof search)
+}
+console.log(typeof search)
 </script>
 
-<div class="banner">
-	<h1>Kukusan Cell</h1>
-  </div>
-  <div class="container">
-	<SearchForm performSearch={search} />
-	<div class="output">
+<div>
+	<div class="banner">
+		<img src={kukusanCell} alt="Kukusan Cell" class="full-width-image">
 	</div>
-</div>  
+	<div class="container">
+		<div class="input-container">
+			<SearchForm performSearch={search} />
+		</div>
+		<div class="output">
+		</div>
+	</div>	
+</div>
 
 <style>
-  .banner {
-      background-color: #333; /* Dark grey */
-      color: white;
-      padding: 10px;
-      text-align: center;
-    }
-    .container {
-      display: flex;
-      padding: 10px;
-    }
-   .output {
-      flex: 1;
-      margin: 5px;
-      padding: 10px;
-      width: 50%;
-    }
-    .output {
-      background-color: #d0d0d0; /* Medium grey */
-    }
+
+:global(body){
+	background: linear-gradient(to bottom, #ffafcc, #a2d2ff);
+}
+.banner {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    padding: 10px;
+}
+
+.output {
+    flex: 1;
+    margin: 5px;
+    padding: 10px;
+    width: 50%;
+}
+
+.output {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.full-width-image {
+    width: 30vw;
+    height: 7vw;
+    object-fit: cover; 
+}
+
+.input-container{
+	padding: 20px 10px 10px 10px;
+	background-color: #0058f0;
+}
 </style>
