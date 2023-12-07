@@ -98,6 +98,7 @@ let has4g = false;
     margin-left: auto;
     margin-right: auto;
     background-color: #f0f0f0;
+    color: black;
     text-align: center;
     padding: 10px;
 }
